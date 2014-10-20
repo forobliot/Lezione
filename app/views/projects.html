@@ -1,0 +1,5 @@
+<h3>Elenco Progetti</h3>
+<p><input type="text" class="form-control" ng-model="searchText"></p>
+<ul>
+	<li class="list-item" ng-repeat="project in projectList | filter: searchText"><a ng-href="#/project/{{project.id}}">{{ project.name }}</a> ({{ project.url }}</li>
+</ul>

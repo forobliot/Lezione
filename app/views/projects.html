@@ -1,5 +1,7 @@
 <h3>Elenco Progetti</h3>
+<p><a ng-href="#/projectedit/0" href="">Crea nuovo sito</a></p>
 <p><input type="text" class="form-control" ng-model="searchText"></p>
 <ul>
-	<li class="list-item" ng-repeat="project in projectList | filter: searchText"><a ng-href="#/project/{{project.id}}">{{ project.name }}</a> ({{ project.url }}</li>
+	<li class="list-item" ng-repeat="project in projectList | filter: searchText | limitTo: showLimit"><a ng-href="#/project/{{project.id}}">{{ project.name }}</a> ({{ project.url }})</li>
 </ul>
+<p ng-show="showLimit < projectList.length"><a href="" ng-click="showMore()">Vedi altri... (ne sono {{ showLimit }} di {{ projectList.length }} ne mancano {{ projectList.length - showLimit }})</p>

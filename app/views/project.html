@@ -1,2 +1,8 @@
-<h3 ng-show="project">Progetto {{ project.name }}</h3>
+<div ng-show="project"> 
+<h3>Progetto {{ project.name }}</h3>
+<p>url: <a href="http://{{ project.url }}.ariel.ctu.unimi.it" target="_blank"><strong>{{ project.url }}</strong></p>
+<p>
+	<a href="" ng-href="#/projectedit/{{ project.id }}">Modifica</a> 
+</p>
+</div>
 <h3 ng-show="!project">{{ errorMessage }}</h3>
